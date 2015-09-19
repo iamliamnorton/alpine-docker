@@ -1,7 +1,8 @@
 PROJECT           = alpine
+REGISTRY  	  = iamliamnorton
 TAG              ?= dev
 
-IMAGE = $(PROJECT):$(TAG)
+IMAGE = $(REGISTRY)/$(PROJECT):$(TAG)
 
 .PHONY: build
 build:
@@ -15,3 +16,6 @@ test:
 shell:
 	docker run --rm -it --privileged $(IMAGE) bash
 
+.PHONY: push
+push:
+	docker push $(IMAGE)
