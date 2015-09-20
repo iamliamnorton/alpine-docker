@@ -7,7 +7,6 @@ RUN apk update && apk upgrade \
   && chmod +x /usr/local/bin/gosu \
   && git clone https://github.com/sstephenson/bats.git /usr/src/bats \
   && /usr/src/bats/install.sh /usr/local \
-  && apk del curl \
   && rm -rf /usr/src/* \
   && rm -rf /var/cache/apk/*
 
